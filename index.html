@@ -6,44 +6,14 @@
     <title>Email Form</title>
 </head>
 <body>
-    <form id="myForm">
+    <form action="mailto: folarinsamuel76@gmail.com" method="post" enctype="text/plain">
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+        <input type="text" id="name" name="name" placeholder="Full name"><br><br>
         <label for="phone">Phone Number:</label>
-        <input type="text" id="phone" name="phone"><br><br>
+        <input type="text" id="phone" name="phone" placeholder="WhatsApp number"><br><br>
         <label for="alias">Alias Name:</label>
-        <input type="text" id="alias" name="alias"><br><br>
+        <input type="text" id="alias" name="alias" placeholder="Your ff name><br><br>
         <input type="submit" value="Submit">
     </form>
-
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script src="script.js">
-(function() {
-    emailjs.init("u51AbrWG1PeY0SpUd");
-})();
-
-const form = document.getElementById('myForm');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const alias = document.getElementById('alias').value;
-
-    const templateParams = {
-        name,
-        phone,
-        alias,
-    };
-
-    emailjs.send('service_cg9y4ot', 'template_9pvd42n', templateParams)
-        .then((response) => {
-            console.log('Email sent successfully!', response.status, response.text);
-        })
-        .catch((error) => {
-            console.log('Error sending email:', error);
-        });
-});
-</script>
 </body>
-          </html>
+</html>
